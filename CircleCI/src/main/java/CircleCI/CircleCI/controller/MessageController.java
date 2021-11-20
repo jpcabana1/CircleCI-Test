@@ -20,8 +20,8 @@ public class MessageController implements MessageApi {
     @Override
     public ResponseEntity<StatusDTO> createMessage(String message) {
         messageService.createMessage(message);
-        StatusDTO statusDTO = StatusDTO.builder().code(200).message("Created").build();
-        return new ResponseEntity<>(statusDTO, HttpStatus.OK);
+        StatusDTO statusDTO = StatusDTO.builder().code(201).message("Created").build();
+        return new ResponseEntity<>(statusDTO, HttpStatus.CREATED);
     }
 
     @Override
