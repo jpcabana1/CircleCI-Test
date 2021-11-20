@@ -23,7 +23,6 @@ jobs:
         distribution: 'adopt'
         cache: gradle
     - name: Make gradlew executable
-      run: chmod +x ./gradle
-
+      run: chmod +x ./gradlew
     - name: Build with Gradle
-      run: ./gradle build
+      run: ./gradlew build
