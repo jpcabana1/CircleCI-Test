@@ -1,6 +1,5 @@
 package CircleCI.CircleCI.service;
 
-import CircleCI.CircleCI.api.MessageApi;
 import CircleCI.CircleCI.model.MessageDTO;
 import CircleCI.CircleCI.repository.MessageRepository;
 import CircleCI.CircleCI.repository.dao.MessageDAO;
