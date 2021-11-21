@@ -1,6 +1,6 @@
-package CircleCI.CircleCI.service;
+package circleciI.restservices.service;
 
-import CircleCI.CircleCI.model.MessageDTO;
+import circleciI.restservices.model.MessageDTO;
 
 import java.util.List;
 

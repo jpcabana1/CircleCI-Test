@@ -1,4 +1,4 @@
-package CircleCI.CircleCI.config;
+package circleciI.restservices.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,5 @@
-package CircleCI.CircleCI.model;
+package circleciI.restservices.model;
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -8,19 +9,16 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@Data
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageDTO implements Serializable {
+public class StatusDTO implements Serializable {
 
-    @JsonProperty("id")
-    private Long id;
+    @JsonProperty("code")
+    private Integer code;
 
     @JsonProperty("message")
     private String message;
-
-    @JsonProperty("validated")
-    private Boolean validated;
 
 }

@@ -1,7 +1,7 @@
-package CircleCI.CircleCI.mocks;
+package circleciI.restservices.mocks;
 
-import CircleCI.CircleCI.model.MessageDTO;
-import CircleCI.CircleCI.repository.dao.MessageDAO;
+import circleciI.restservices.model.MessageDTO;
+import circleciI.restservices.repository.dao.MessageDAO;
 
 
 import java.util.ArrayList;

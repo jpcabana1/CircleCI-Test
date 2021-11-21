@@ -1,6 +1,6 @@
-package CircleCI.CircleCI.repository;
+package circleciI.restservices.repository;
 
-import CircleCI.CircleCI.repository.dao.MessageDAO;
+import circleciI.restservices.repository.dao.MessageDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

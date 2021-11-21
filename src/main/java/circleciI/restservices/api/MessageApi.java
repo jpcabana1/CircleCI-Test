@@ -1,13 +1,17 @@
-package CircleCI.CircleCI.api;
+package circleciI.restservices.api;
 
-import CircleCI.CircleCI.model.MessageDTO;
-import CircleCI.CircleCI.model.StatusDTO;
-import com.sun.istack.NotNull;
+import circleciI.restservices.model.MessageDTO;
+import circleciI.restservices.model.StatusDTO;
+
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 import java.util.List;
 
@@ -21,7 +25,7 @@ public interface MessageApi {
             @ApiResponse(code = 500, message = "Internal Server Error", response = StatusDTO.class)
     })
     @PostMapping(value = "/new", produces = {"application/json"})
-    ResponseEntity<StatusDTO> createMessage(@RequestParam("message") @NotNull @Validated String message);
+    ResponseEntity<StatusDTO> createMessage(@RequestParam("message") @Validated String message);
 
 
     @ApiResponses(value = {

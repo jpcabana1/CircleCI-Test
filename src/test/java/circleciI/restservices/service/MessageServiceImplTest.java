@@ -1,8 +1,8 @@
-package CircleCI.CircleCI.service;
+package circleciI.restservices.service;
 
 
-import CircleCI.CircleCI.mocks.MessageMocks;
-import CircleCI.CircleCI.repository.MessageRepository;
+import circleciI.restservices.mocks.MessageMocks;
+import circleciI.restservices.repository.MessageRepository;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;

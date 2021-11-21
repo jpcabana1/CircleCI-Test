@@ -1,7 +1,7 @@
-package CircleCI.CircleCI.controller;
+package circleciI.restservices.controller;
 
-import CircleCI.CircleCI.mocks.MessageMocks;
-import CircleCI.CircleCI.service.MessageServiceImpl;
+import circleciI.restservices.mocks.MessageMocks;
+import circleciI.restservices.service.MessageServiceImpl;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
