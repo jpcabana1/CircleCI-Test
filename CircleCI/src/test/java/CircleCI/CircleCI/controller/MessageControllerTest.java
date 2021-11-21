@@ -3,21 +3,17 @@ package CircleCI.CircleCI.controller;
 import CircleCI.CircleCI.mocks.MessageMocks;
 import CircleCI.CircleCI.model.StatusDTO;
 import CircleCI.CircleCI.service.MessageServiceImpl;
-
-
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
-public class MessageControllerTest {
+class MessageControllerTest {
+
 
     @InjectMocks
     private MessageController controller;
