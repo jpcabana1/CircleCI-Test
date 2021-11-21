@@ -13,12 +13,21 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      
+
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
 
       - name: Build Gradle
         run: ./gradlew
 
-      - name: Build and test
+      - name: Setup SonarQube
+        run: ./gradlew composeUp
+
+      - name: Build and Test
         run: ./gradlew build
+
+      - name: SonarQube Scan
+        run: ./gradlew sonarqube
+
+      - name: SonarQube Finish
+        run: ./gradlew composeDown
