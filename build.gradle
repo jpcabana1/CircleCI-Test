@@ -58,9 +58,12 @@ sonarqube {
                 '**/model/**',
                 '**/CircleCiApplication*'
         ]
-        property 'sonar.host.url', 'http://localhost:9000'
-        property 'sonar.login', 'admin'
-        property 'sonar.password', 'admin'
+//        property 'sonar.host.url', 'http://localhost:9000'
+//        property 'sonar.login', 'admin'
+//        property 'sonar.password', 'admin'
+        property "sonar.projectKey", "jpcabana1_CircleCI-Test"
+        property "sonar.organization", "jpcabana1"
+        property "sonar.host.url", "https://sonarcloud.io"
 
     }
 }
