@@ -27,42 +27,58 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-parent:2.5.6'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.6'
+    runtimeOnly 'com.h2database:h2:1.4.200'
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
-    runtimeOnly 'com.h2database:h2:1.4.200'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test'){
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     testImplementation"org.mockito:mockito-core:3.3.3"
     testImplementation"org.mockito:mockito-inline:3.6.28"
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
-    testImplementation"org.junit.jupiter:junit-jupiter-api:5.4.2"
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.2")
 
-    implementation 'junit:junit:4.13.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
+
+    testCompileOnly 'junit:junit:4.13'
 
 
 
 }
 
-test {
-    useJUnitPlatform()
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDirectory = file("$buildDir/JacocoReportDir")
 }
 
-jacocoTestReport(){
-    enabled = false
+jacocoTestReport {
     reports {
-        // xml is usually used to integrate code coverage with
-        // other tools like SonarQube, Coveralls or Codecov
         xml.required = true
-
-        // HTML reports can be used to see code coverage
-        // without any external tools
-        html.required = true
-
+        csv.required = false
         html.destination file("${buildDir}/jacocoHtml")
     }
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(
+                    dir: it,
+                    exclude: [
+                            '**/api/**',
+                            '**/config/**',
+                            '**/repository/**',
+                            '**/model/**',
+                            '**/CircleCiApplication*'
+                    ]
+            )
+        })
+    }
+
+}
+
+
+test {
+    finalizedBy jacocoTestReport
+    useJUnitPlatform()
 }

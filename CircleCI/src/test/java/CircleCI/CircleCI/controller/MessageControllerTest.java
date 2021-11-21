@@ -1,19 +1,18 @@
 package CircleCI.CircleCI.controller;
 
 import CircleCI.CircleCI.mocks.MessageMocks;
-import CircleCI.CircleCI.model.StatusDTO;
 import CircleCI.CircleCI.service.MessageServiceImpl;
+
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.http.ResponseEntity;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertEquals;
-
-class MessageControllerTest {
-
+@RunWith(MockitoJUnitRunner.class)
+public class MessageControllerTest {
 
     @InjectMocks
     private MessageController controller;
@@ -21,18 +20,16 @@ class MessageControllerTest {
     @Mock
     private MessageServiceImpl messageService;
 
-    private static final String MESSAGE = "Hello World!";
-
     @Test
     public void createMessage_WhenServiceSavesMessage_ThenReturn200() {
 
-        ResponseEntity<StatusDTO> statusDTO = controller.createMessage(MESSAGE);
-        assertEquals(statusDTO.getBody().getMessage(), MESSAGE);
+        Assertions.assertDoesNotThrow(() -> controller.createMessage(MessageMocks.MESSAGE));
+
     }
 
     @Test
     public void createMessage_WhenServiceReturnsOK_ThenReturn200() {
-        Mockito.when(messageService.getAllMessages()).thenReturn(MessageMocks.stubMessages());
+        Mockito.when(messageService.getAllMessages()).thenReturn(MessageMocks.stubMessagesDTOs());
 
         Assertions.assertDoesNotThrow(() -> controller.getAllMessages());
     }
