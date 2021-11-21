@@ -22,15 +22,12 @@ public class MessageControllerTest {
 
     @Test
     public void createMessage_WhenServiceSavesMessage_ThenReturn200() {
-
         Assertions.assertDoesNotThrow(() -> controller.createMessage(MessageMocks.MESSAGE));
-
     }
 
     @Test
     public void createMessage_WhenServiceReturnsOK_ThenReturn200() {
         Mockito.when(messageService.getAllMessages()).thenReturn(MessageMocks.stubMessagesDTOs());
-
         Assertions.assertDoesNotThrow(() -> controller.getAllMessages());
     }
 }

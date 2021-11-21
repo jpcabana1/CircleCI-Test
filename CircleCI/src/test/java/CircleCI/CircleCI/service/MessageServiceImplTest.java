@@ -41,9 +41,7 @@ public class MessageServiceImplTest {
 
     @Test
     public void getAllMessages_WhenMessageRepositoryFindsData_ThenReturnsMessages(){
-
         Mockito.when(messageRepository.findAll()).thenReturn(MessageMocks.stubMessagesEntity());
-
         Assertions.assertDoesNotThrow(() -> messageService.getAllMessages());
     }
 
