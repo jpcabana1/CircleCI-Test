@@ -42,12 +42,12 @@ public class MessageServiceImpl implements MessageService {
 
         List<MessageDAO> listMessages = messageRepository.findAll();
 
-        listMessages.forEach((message) ->
-            messages.add(MessageDTO.builder()
-                    .id(message.getId())
-                    .message(message.getMessage())
-                    .validated(message.getVerified())
-                    .build()));
+        listMessages.forEach(message ->
+                messages.add(MessageDTO.builder()
+                        .id(message.getId())
+                        .message(message.getMessage())
+                        .validated(message.getVerified())
+                        .build()));
 
         return messages;
     }
