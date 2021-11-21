@@ -23,7 +23,7 @@ public class MessageServiceImpl implements MessageService {
         } else {
             MessageDAO messageDAO = MessageDAO.builder()
                     .message(message)
-                    .verified(true)
+                    .verified(false)
                     .build();
             messageRepository.save(messageDAO);
 
