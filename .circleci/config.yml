@@ -32,5 +32,5 @@ jobs:
           command: ./gradlew
 
       - run:
-          name: Gradle Tasks
+          name: Gradle Build
           command: ./gradlew build
