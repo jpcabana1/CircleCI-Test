@@ -1,8 +1,8 @@
-package circleciI.restservices.service;
+package circleci.restservices.service;
 
-import circleciI.restservices.model.MessageDTO;
-import circleciI.restservices.repository.MessageRepository;
-import circleciI.restservices.repository.dao.MessageDAO;
+import circleci.restservices.model.MessageDTO;
+import circleci.restservices.repository.MessageRepository;
+import circleci.restservices.repository.dao.MessageDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package circleciI.restservices.model;
+package circleci.restservices.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

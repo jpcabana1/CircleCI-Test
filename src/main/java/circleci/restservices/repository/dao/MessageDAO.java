@@ -1,4 +1,4 @@
-package circleciI.restservices.repository.dao;
+package circleci.restservices.repository.dao;
 
 import lombok.*;
 

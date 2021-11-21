@@ -1,7 +1,7 @@
-package circleciI.restservices.api;
+package circleci.restservices.api;
 
-import circleciI.restservices.model.MessageDTO;
-import circleciI.restservices.model.StatusDTO;
+import circleci.restservices.model.MessageDTO;
+import circleci.restservices.model.StatusDTO;
 
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;

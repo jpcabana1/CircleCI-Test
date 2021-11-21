@@ -1,9 +1,9 @@
-package circleciI.restservices.controller;
+package circleci.restservices.controller;
 
-import circleciI.restservices.api.MessageApi;
-import circleciI.restservices.model.MessageDTO;
-import circleciI.restservices.model.StatusDTO;
-import circleciI.restservices.service.MessageService;
+import circleci.restservices.api.MessageApi;
+import circleci.restservices.model.MessageDTO;
+import circleci.restservices.service.MessageService;
+import circleci.restservices.model.StatusDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
